@@ -1,0 +1,24 @@
+Aaron M. Wallace
+CST-236
+Lab#5 write-up
+
+1.	As per the usual, (for me at least) the most difficult part of this lab was that it was in python. Since I have never been taught python, I’ve had to teach it to myself as I try to complete the assignments and balance my 3 other classes.
+
+2.	Performance testing is when a test is done to determine if something performs to some minimum requirement. Performance measuring is when the performance test results are stored and then graphed over time.
+
+3.	Any call to “get_other_users” would cause the test to take an additional 20 seconds for unknown reasons.
+
+4.	I kept the same mock function for “get_other_users” as I had from Lab#4, which was evidently incorrect.
+
+5.	Sorry, didn’t get around to this one. 
+
+6.	Types of performance tests
+
+	a.	Load testing checks the systems reaction when it is under a heavy load, can also be used to see what happens if a max value is reached or exceeded. 
+	b.	Stress testing is essentially the same as load testing, just with a fancy new name! 
+	c.	Endurance testing checks for how well a system performs after running for an extended period of time.
+	d.	Spike testing checks what happens to a system when the word load suddenly spikes.
+	e.	Configuration testing checks to see how a system would perform if a part of the configuration was changed (such as run on a different OS, a slower system, Intel vs. AMD, etc…
+	f.	Isolation testing checks if each individual software component meets its own minimum performance requirements.
+	
+7.	At least 20 hour and still not 100% done…
