@@ -1,0 +1,122 @@
+Aaron M. Wallace
+CST-236
+Lab#6
+
+**<Verify Title Bar>**
+*Setup*
+#. Run sharptona.exe
+*Procedure*
+#. Looked at title bar to verify it read “SharpTona”
+
+**<Verify Labels>**
+*Setup*
+#. Run sharptona.exe
+*Procedure*
+#. Looked at window to verify the labels were present
+
+**<Verify Ask>**
+*Setup*
+#. Run sharptona.exe
+*Procedure*
+#. Type a message into the Question text box and click “Ask” button
+#. Observe the answer that is given in response
+
+**<Verify Default question>**
+*Setup*
+#. Run sharptona.exe
+*Procedure*
+#. Type “What is the answer to everything?” into Question field and click Ask
+#. Check that ‘42’ appears in Answer field
+
+**<Check default disabled buttons>**
+*Setup*
+#. Run sharptona.exe
+*Procedure*
+#. Looked window to verify that Teach and Correct buttons were inactive 
+#. Check that clicking on the aforementioned buttons has no effect
+#. Check that Answers field is inactive by attempting to select it
+
+
+
+
+
+
+
+**<Check that answer displays>**
+*Setup*
+#. Run sharptona.exe
+#. Ask it a question
+*Procedure*
+#. Check that a response appears in the Answer field
+
+
+**<No question response>**
+*Setup*
+#. Run sharptona.exe
+*Procedure*
+#. Leave the Question field blank and click Ask
+#. Check that “Was that a question?” appears in the Answer field
+
+
+**<Correct answer and user input>**
+*Setup*
+#. Run sharptona.exe
+*Procedure*
+#. Enter a known question into the Question field and click Ask
+#. Check that Answer field displays correct answer
+#. Check that Answer field now allows user input
+
+
+**<Correct button>**
+*Setup*
+#. Run sharptona.exe
+#. Enter a known question into the Question field and click Ask
+*Procedure*
+#. Change the answer in the Answer field in some way and click Correct
+#. Check that the Answer box is now disabled
+#. Check that the Teach and Correct buttons are disabled
+
+
+**<Unknown question>**
+*Setup*
+#. Run sharptona.exe
+*Procedure*
+#. Enter an unknown question into the Question field and click Ask
+#. Check that the Answer field displays “I don’t know please teach me.”
+#. Check that the Teach button is now enabled
+
+
+
+**<Teach answer>**
+*Setup*
+#. Run sharptona.exe
+#. Enter an unknown question into the Question field and click Ask
+*Procedure*
+#. Click the Teach button
+#. Check that the Answer box becomes disabled
+#. Check that the Teach and Correct button are disabled
+#. Check that the answer was stored by asking the same question again
+
+~~~~~~~~~~~Write up~~~~~~~~~~~
+#. What are the advantages and disadvantages of manual testing?
+	Advantages: Ensures that the system is indeed human friendly, is also far better suited for testing of images or gradients (namely bitmaps). Also, can help catch some bugs that automated testing could miss.
+Disadvantages: Takes a lot of time to test everything by hand and can get monotonous. 
+
+#. What are the advantages and disadvantages of automated testing?
+	Advantages: Takes far less time to run automated tests than doing the same tests by hand. Can catch certain bugs that manual testing might overlook (since a tester might forget to click a certain button)
+Disadvantages: Can sometimes miss bugs that could be caught by manual testing, also requires a good amount of code to be written in order to do said test.
+
+#. What new bugs did you encounter with the new code?
+	None
+#. How many UI tests did you generate? How did you deteremine you had written enough?
+	8. I determined I had enough when I had covered all the requirements. 
+#. How long did this lab take to accomplish?
+	About 6 hours. 
+
+
+
+
+
+
+
+
