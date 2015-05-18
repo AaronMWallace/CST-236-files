@@ -112,24 +112,24 @@ class pyTona_testing(unittest.TestCase):
         ret = self.obj.ask("Where are you?")
         self.assertEqual(ret, "Unknown")
 
-    #def test_get_git_branch(self):
-     #   mock_popen = answer_funcs.get_git_branch()
-     #   mock_popen.communicate = mock.Mock(return_value=())
-      #  with mock.patch("answer_funcs.subprocess") as subprocess:
-           # subprocess.Popen.return_value.returncode = 0
-          #  self.obj2.get_git_branch()
-          #  self.obj.ask("Who else is here?")
-           # subprocess.Popen.assert_called_once_with(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], stdout=subprocess.PIPE)
+    @mock.patch('subprocess.Popen')
+    def test_get_git_branch(self, mock_popen):
+        process_mock = mock.Mock()
+        attrs = {'communicate.return_value': ['test']}
+        process_mock.configure_mock(**attrs)
+        mock_popen.return_value = process_mock
+        self.obj2.get_git_branch()
+        self.obj2.get_git_url()
 
-    @requirements(['#0024'])
-    @patch('pyTona.answer_funcs.get_other_users')
-    def test_getting_users(self, MockClass1):
-        MockClass1.return_value = "Templeton Peck", "B.A Baracus", "Murdoch", "Col. John 'Hannibal' Smith"
-        
-        ret = pyTona.answer_funcs.get_other_users()
-        self.assertTrue(MockClass1.called)
-        self.assertEqual(ret, ("Templeton Peck", "B.A Baracus", "Murdoch", "Col. John 'Hannibal' Smith"))
-
+    @requirements(['#0024', '#0026'])
+    @mock.patch('socket.socket')
+    def test_get_other_users(self, mock_sock):
+        m = mock_sock.return_value
+        m.connect.return_value = None
+        m.send.return_value = None
+        m.recv.return_value = 'Frank$Joe$Bubba'
+        ret = self.obj.ask("Who else is here?")
+        self.assertEqual(ret, ['Frank', 'Joe', 'Bubba'])
 
     @requirements(['#0027'])
     def test_correct_responses6(self):
@@ -161,7 +161,6 @@ class pyTona_testing(unittest.TestCase):
         proc_time = time.clock() - start
         self.assertLess(proc_time, 60)
 
-     #requirements not covered: #0001, #0010, #0018, #0026, 
     @requirements(['#0028','#0033','#0034'])
     def test_speed_of_fibonacci(self):
         idx = 0
@@ -170,7 +169,7 @@ class pyTona_testing(unittest.TestCase):
         while len(self.obj2.seq_finder.sequence) < 1000:
             ret = self.obj.ask("What is the 5 digit of the Fibonacci sequence?")
             idx += 1
-           
+
         proc_time = time.clock() - start
 
         self.obj2.seq_finder.stop()
@@ -218,6 +217,6 @@ class pyTona_testing(unittest.TestCase):
 
         self.assertLess(proc_time, 0.05)
         
-        
+    #requirements not covered: #0001, #0010, #0018, #0026
       
         
