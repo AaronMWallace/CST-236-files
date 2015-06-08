@@ -1,0 +1,91 @@
+Aaron M. Wallace
+CST-236
+Lab #7
+
+1. What bugs did you find?
+	- Bug 1: Occurs when a '?' is found before the end of the string.
+	
+	- Bug 2: Occurs when 'ask' is given a string that is a multiple of 5 in length. e.g 5,10,15,20,etc
+	
+	- Bug 3: Occurs when 'ask' is given a string that exceeds 50 characters in length.
+	
+	- Bug 4: Seems to occur with the 'teach' command, but is impossible to reproduce unless running against the fuzz_test_sharptona.py file. Running the program on its own and then attempting to reproduce bug 4 doesn't seem possible, as it will simply give me Bug 1,2,3,5 or 7 when reusing the last few test commands that led up to Bug 4 occuring.
+
+	- Bug 5: Occurs whenever the user asks "What is the answer to everything?" and then tries to use "Correct" after inputing a character instead of only numbers. Also, if correcting from an answer with characters to one that is only numbers, this bug will occur again.
+	
+	- Bug 6: Occurs when sharptona.exe is run for the approximately 10th time. Has been observed to occur on 11th and higher.
+	
+	- Bug 7: Occurs when 'teach' is given a string that includes a '?'
+	
+	
+2. 
+	-Advantages: By testing in a random fashion, it can reveal bugs that could have easily been over looked. Also, when testing something in a way that it was not expected to be used, it helps to discoer weak points in the program. E.g memory leaks, crashing, etc.
+	
+	-Disadvantages: Due to teh random nature of the tests, it can be difficult to reproduce a bug in order to understand exactly what caused it in the first place. And, waiting for the random tests to stumble upon an elusive bug can be time consuming.
+	
+3. Trying to figure out bug 4. That one stumped me. 
+
+4. 
+	-Phone: Depends on the phone type of course, but if we were using a non-smart phone we could try pressing several buttons at once, place it in a snug pocket in someone's jeans and see what happens throughout the day. (Don't wanna be butt-dialing 911 now do we?) And similar sorts of things.
+			With a smart phone, one could test the device behaves if a button is pressed over and over and over again. Test multiple failed entries, switching from landscape to portait view repeatedly, use several fingers on the screen at once, etc. 
+	
+	-Website: One could test how the site handles spam clicking on the entire page, how well text boxes behave when filled with text, log-in to a website, hit the back button, then click on a link that leads to a member's only area, test the site when having it open on several tabs, spam password attempts, etc.
+	
+		
+	-Library: Repeatedly read and write from the same slot, attempt to read a blank spot, read and write at the same time, repeatedly read and write from multiple different slots, etc
+	
+5. It can slow the test down, allowing one to watch it progress through the program at a speed that humans can comprehend. Which allows one to see the bugs as they occur.
+
+6. Delta Debugging is the concept of breaking a program down step by step until the issues are found.
+
+7. 
+	1. 1-20 FAIL
+	2. 1-10 PASS
+	3. 11-20 PASS
+	4. 1-15 PASS
+	5. 5-20 FAIL
+	6. 5-15 PASS
+	7. 6-20 FAIL
+	8. 7-20 FAIL
+	9. 8-20 FAIL
+	10. 9-20 PASS
+	11. 8-19 PASS
+	12. 8,10-20 FAIL
+	13. 8,11-20 FAIL
+	14. 8,12-20 FAIL
+	15. 8,13-20 PASS
+	16. 8,12,13,15-20 FAIL
+	17. 8,12,13,16-20 FAIL
+	18. 8,12,13,17-20 FAIL
+	19. 8,12,13,18-20 FAIL
+	20. 8,12,13,19,20 FAIL <--- 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
